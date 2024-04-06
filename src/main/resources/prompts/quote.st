@@ -1,0 +1,1 @@
+Give me {number} popular quotes of {author}. If you don't know the answer, just say "I don't know". {format}
