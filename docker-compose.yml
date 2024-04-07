@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  backend:
+    container_name: spring-ai
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    restart: always
+    ports:
+      - 8082:8080
+    environment:
+      - OPENAI_API_KEY=<ADD Your API key here>
+    volumes:
+      - /data/spring-ai-app
