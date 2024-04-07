@@ -42,12 +42,12 @@ You can use postman or a browser to call the endpoint
 ```shell
 http://localhost:8082/quote
 ```
-It will return 3 popular quotes from Jean-Paul Sartre
+It will return 3 (which is the default number of quotes) popular quotes from Jean-Paul Sartre (Default author if no one else is provided)
 
 ```shell
 http://localhost:8082/quote?author=Albert Einstein
 ```
-It will provide 3 (which is the default) popular quotes from Albert Ensitein
+It will provide 3 popular quotes from Albert Ensitein
 
 ```shell
 http://localhost:8082/quote?author=Albert Einstein&nbQuotes=5
