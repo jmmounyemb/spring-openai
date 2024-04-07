@@ -4,7 +4,7 @@
 
 For building and running the application you need:
 
-- [JDK 1.17]([http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html))
+- [JDK 1.17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html))
 - [Maven 3](https://maven.apache.org)
 
 ## Running the application locally
@@ -28,8 +28,8 @@ docker run -d -p 8080:8080 -e OPENAI_API_KEY="Your api key here" spring-ai
 
 ### Use the docker-compose file
 Open the docker-compose file
-before you run the command, provide your api key in OPENAI_API_KEY variable
-run the command 
+Fill your api key in OPENAI_API_KEY environment variable
+Now, you can run the command 
 
 ```shell
 docker-compose up
