@@ -18,7 +18,7 @@ mvn spring-boot:run
 ### Use the docker file in the root of the directory
 run these commands
 
- - ```shell
+ ```shell
 docker build -t spring-ai .
 ```
 
