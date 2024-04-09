@@ -18,7 +18,7 @@ public class QuoteController {
     }
 
     @GetMapping("")
-    public ResponseEntity<AuthorQuotes> generate(@RequestParam(value = "author", defaultValue = "Jean-paul Sartre") String author,
+    public ResponseEntity<AuthorQuotes> generateAuthorQuotes(@RequestParam(value = "author", defaultValue = "Jean-paul Sartre") String author,
                                                  @RequestParam(value = "nbQuotes", defaultValue = "3") Integer nbQuotes) {
 
         return ResponseEntity.ok(quoteService.getAuthorQuotes(author, nbQuotes));

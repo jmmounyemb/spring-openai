@@ -17,6 +17,8 @@ import java.util.Map;
 @Service
 public class QuoteServiceImpl implements IQuoteService {
 
+    private static final BeanOutputParser<AuthorQuotes> authorQuotesBeanOutputParser = new BeanOutputParser<>(AuthorQuotes.class);
+
     @Value("classpath:/prompts/quote.st")
     private Resource quotePromptResource;
 
@@ -28,7 +30,6 @@ public class QuoteServiceImpl implements IQuoteService {
 
     @Override
     public AuthorQuotes getAuthorQuotes(String author, int nbQuotes) {
-        BeanOutputParser<AuthorQuotes> authorQuotesBeanOutputParser = new BeanOutputParser<>(AuthorQuotes.class);
         PromptTemplate promptTemplate = new PromptTemplate(quotePromptResource);
         var userMessage = promptTemplate.createMessage(Map.of("author", author, "number", nbQuotes, "format", authorQuotesBeanOutputParser.getFormat()));
         var systemMessage = new SystemMessage("Your primary function is to tell quotes from the same author. if someone ask you another question, tell them you only give quotes from Author");
