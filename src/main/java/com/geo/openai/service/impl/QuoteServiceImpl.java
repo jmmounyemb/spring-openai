@@ -30,10 +30,10 @@ public class QuoteServiceImpl implements IQuoteService {
 
     @Override
     public AuthorQuotes getAuthorQuotes(String author, int nbQuotes) {
-        PromptTemplate promptTemplate = new PromptTemplate(quotePromptResource);
+        var promptTemplate = new PromptTemplate(quotePromptResource);
         var userMessage = promptTemplate.createMessage(Map.of("author", author, "number", nbQuotes, "format", authorQuotesBeanOutputParser.getFormat()));
         var systemMessage = new SystemMessage("Your primary function is to tell quotes from the same author. if someone ask you another question, tell them you only give quotes from Author");
-        Prompt quotePrompt = new Prompt(Arrays.asList(systemMessage, userMessage));
+        var quotePrompt = new Prompt(Arrays.asList(systemMessage, userMessage));
         var generation = chatClient.call(quotePrompt).getResult();
 
         return authorQuotesBeanOutputParser.parse(generation.getOutput().getContent());
